@@ -1,12 +1,6 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
-pub struct ApiResponse<T> {
-    pub success: bool,
-    pub data: T,
-}
-
-#[derive(Serialize)]
 pub struct KeypairResponse {
     pub pubkey: String,
     pub secret: String,
@@ -103,13 +97,4 @@ pub struct SendTokenAccount {
     pub pubkey: String,
     #[serde(rename = "isSigner")]
     pub is_signer: bool,
-}
-
-impl<T> ApiResponse<T> {
-    pub fn success(data: T) -> Self {
-        Self {
-            success: true,
-            data,
-        }
-    }
 }

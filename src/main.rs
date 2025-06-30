@@ -1,7 +1,5 @@
-mod errors;
 mod handlers;
 mod models;
-mod utils;
 
 use axum::{
     routing::post,
